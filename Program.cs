@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CSharpTasks.OOPTasks;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,16 +11,17 @@ namespace CSharpTasks
     {
         static void Main(string[] args)
         {
-            //BaseCar bmw = new BMW("sedan", "red", "BMW", "M5");
-            //Audi audi = new Audi("SUV", "black", "Audi", "Q7");
+            BMW bmw = new BMW("sedan", "red", "BMW", "M5", 2);
+            BaseCar audi = new Audi("sedan", "black", "Audi", "a6", 2);
 
-            //bmw.StartTheCar();
-            //audi.StartTheCar();
-            //bmw.AddSpeed(80);
-            //audi.DecriseSpeed(45);
+            bmw.AddSpeed(50);
+            bmw.AddExtraSpeed();
+            // audi.AddExtraSpeed(); - not avalible with BaseCar
 
-            ArrayTasks arrayTasks = new ArrayTasks();
-            arrayTasks.Palindrome();
+
+
+            //ArrayTasks arrayTasks = new ArrayTasks();
+            //arrayTasks.Palindrome();
 
             Console.ReadKey();
         }

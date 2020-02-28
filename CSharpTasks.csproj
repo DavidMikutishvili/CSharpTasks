@@ -44,8 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrayTasks.cs" />
-    <Compile Include="ClassTask.cs" />
     <Compile Include="LoopTasks.cs" />
+    <Compile Include="OOPTasks\Audi.cs" />
+    <Compile Include="OOPTasks\BaseCar.cs" />
+    <Compile Include="OOPTasks\BMW.cs" />
+    <Compile Include="OOPTasks\IExtraSpeed.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

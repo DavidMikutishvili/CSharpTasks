@@ -52,23 +52,23 @@ namespace CSharpTasks
 
             int sum = 0;
             int count = 0;
-            int arithmeticMean = 0;
+            int average = 0;
 
             for (int i = 0; i < array.Length; i++)
             {
                 count++;
                 sum += array[i];
             }
-            arithmeticMean = sum / array.Length;
+            average = sum / array.Length;
 
             Console.WriteLine($"Sum {sum}");
             Console.WriteLine($"The number of array elements {count}");
-            Console.WriteLine($"Aritchmetic mean {arithmeticMean}");
+            Console.WriteLine($"Aritchmetic mean {average}");
             Console.WriteLine("Numbers less than the arithmetic mean: ");
 
             for (int i = 0; i < array.Length; i++)
             {
-                if (arithmeticMean > array[i])
+                if (average > array[i])
                 {
                     Console.Write("{0}, ", array[i]);
                 }
@@ -90,9 +90,9 @@ namespace CSharpTasks
                 newArray[i] = array[i];  
             }
             string halfPalindrome = new string(newArray); 
-            string haifPalindromeReverse = new string(newArrayReverse); 
+            string halfPalindromeReverse = new string(newArrayReverse); 
 
-            if ($"{halfPalindrome}{ haifPalindromeReverse}" == palindrome)
+            if ($"{halfPalindrome}{ halfPalindromeReverse}" == palindrome)
             {
                 Console.WriteLine("Palindrome");
             }
