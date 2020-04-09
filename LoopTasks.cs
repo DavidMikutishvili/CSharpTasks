@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace CSharpTasks
 {
-    class LoopTasks
+    internal class LoopTasks
     {
         // Task 1
+
         public void Factorial()
         {
             int n = Convert.ToInt32(Console.ReadLine());
@@ -25,11 +26,12 @@ namespace CSharpTasks
 
         // Task 2
         // Find the sum and number of even digits of a number 
+
         public void CountOfPositiveDigits()
         {
             int inputNumber = Int32.Parse(Console.ReadLine());
             int sum = 0;
-            int count = 0;
+            int evenNumbers = 0;
             int lastDigit = 0;
 
             while (inputNumber > 0)
@@ -39,20 +41,19 @@ namespace CSharpTasks
 
                 if (lastDigit % 2 != 0)
                 {
-                    count++;
+                    evenNumbers++;
                     sum += lastDigit;
                 }
             }
             Console.WriteLine(sum);
-            Console.WriteLine(count);
+            Console.WriteLine(evenNumbers);
         }
 
         // Task 3
         // Find the largest digit of a number
+
         public void BiggestDigitInNumber(int n)
         {
-            //int n = Convert.ToInt32(Console.ReadLine());
-
             int remainder = 0;
             int buf = 0;
             int big = 0;

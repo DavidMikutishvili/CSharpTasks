@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace CSharpTasks
 {
-    class ArrayTasks
+    internal class ArrayTasks
     {
         // Task 1
         // Write Fibonacci numbers to an array
+
         public void FibonacciNumbers()
         {
             Console.Write("Enter the number of array lenght ");
             int n = Int32.Parse(Console.ReadLine());
             int[] array = new int[n];
-            int a = 0;
+            int a = 0; 
             int b = 1;
             int c = 0;
             int count = 0;
@@ -46,6 +47,7 @@ namespace CSharpTasks
 
         // Task 2
         // Find in the array numbers whose value is less than the arithmetic average of all elements of the array
+
         public void NumbersLessThanTheArithmeticMean()
         {
             int[] array = { 2, 5, 2, 1, 8, -5, 6, 3, -3, 1, 4 };
@@ -63,7 +65,7 @@ namespace CSharpTasks
 
             Console.WriteLine($"Sum {sum}");
             Console.WriteLine($"The number of array elements {count}");
-            Console.WriteLine($"Aritchmetic mean {average}");
+            Console.WriteLine($"Average {average}");
             Console.WriteLine("Numbers less than the arithmetic mean: ");
 
             for (int i = 0; i < array.Length; i++)
@@ -76,23 +78,26 @@ namespace CSharpTasks
         }
 
         // Task 3
+
         public void Palindrome()
         {
+            Console.WriteLine("Enter an even number of characters, for example: 125521 or anna");
             string palindrome = Console.ReadLine(); 
             char[] array = palindrome.ToCharArray(); 
 
-            char[] newArray = new char[array.Length / 2];
-            char[] newArrayReverse = new char[array.Length / 2];
-            
-            for (int i = array.Length / 2 - 1; i >= 0; i--)
-            {
-                newArrayReverse[array.Length / 2 - 1 - i] = array[i]; 
-                newArray[i] = array[i];  
-            }
-            string halfPalindrome = new string(newArray); 
-            string halfPalindromeReverse = new string(newArrayReverse); 
+            char[] firstHalfLine = new char[array.Length / 2]; 
+            char[] secondHalfLine = new char[array.Length / 2];
+            int buf = array.Length / 2 - 1;
 
-            if ($"{halfPalindrome}{ halfPalindromeReverse}" == palindrome)
+            for (int i = buf; i >= 0; i--)
+            {
+                secondHalfLine[buf - i] = array[i]; 
+                firstHalfLine[i] = array[i];  
+            }
+            string rirstHalfPalindrome = new string(firstHalfLine); 
+            string secondHalfPalindromeReverse = new string(secondHalfLine); 
+
+            if ($"{rirstHalfPalindrome}{ secondHalfPalindromeReverse}" == palindrome)
             {
                 Console.WriteLine("Palindrome");
             }

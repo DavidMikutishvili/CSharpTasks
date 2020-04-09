@@ -11,17 +11,15 @@ namespace CSharpTasks
     {
         static void Main(string[] args)
         {
-            BMW bmw = new BMW("sedan", "red", "BMW", "M5", 2);
-            BaseCar audi = new Audi("sedan", "black", "Audi", "a6", 2);
+            BMW bmw = new BMW("sedan", "red", "BMW", "M5");
+            Audi audi = new Audi("sedan", "black", "Audi", "a6");
 
-            bmw.AddSpeed(50);
-            bmw.AddExtraSpeed();
-            // audi.AddExtraSpeed(); - not avalible with BaseCar
+            bmw.CarStart();
+            bmw.AddSpeed(20);
+            bmw.AddExtraSpeed(15);
+            bmw.DecriseSpeed(25);
 
-
-
-            //ArrayTasks arrayTasks = new ArrayTasks();
-            //arrayTasks.Palindrome();
+            Console.WriteLine(bmw.Make + " current speed is now " + bmw.CurrentSpeed);
 
             Console.ReadKey();
         }

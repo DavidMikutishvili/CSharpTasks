@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace CSharpTasks.OOPTasks
 {
-    interface IExtraSpeed
+    public interface IExtraSpeed
     {
-        uint ExtraSpeed { get; set; }
-        void AddExtraSpeed();
+        void AddExtraSpeed(uint extraSpeed);
     }
 }

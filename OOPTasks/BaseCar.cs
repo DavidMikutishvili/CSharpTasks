@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace CSharpTasks.OOPTasks
 {
-    abstract class BaseCar
+    internal abstract class BaseCar
     {
-        public uint CurrentSpeed { get; private set; }
-        public string BodyType { get; set; }
-        public string Color { get; set; }
-        public string Make { get; set; }
+        public uint CurrentSpeed { get; protected set; }
+        public string BodyType { get; protected set; }
+        public string Color { get; protected set; }
+        public string Make { get; protected set; }
 
         public BaseCar(string bodyType, string color, string make)
         {
@@ -25,12 +25,12 @@ namespace CSharpTasks.OOPTasks
         public void AddSpeed(uint speed)
         {
             CurrentSpeed += speed;
-            Console.WriteLine($"{Make} auto {Color} increased speed by {CurrentSpeed} km/h");
+            Console.WriteLine($"{Make} auto {Color} increased speed to {CurrentSpeed} km/h\n");
         }
 
         public virtual void DecriseSpeed(uint speed)
         {
-            Console.WriteLine($"{Make} auto {Color} reduced speed by {speed} km/h");
+            Console.WriteLine($"{Make} auto {Color} reduced speed by {speed} km/h\n");
         }
     }
 }

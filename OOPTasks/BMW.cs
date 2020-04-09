@@ -6,26 +6,34 @@ using System.Threading.Tasks;
 
 namespace CSharpTasks.OOPTasks
 {
-    class BMW : BaseCar, IExtraSpeed
+    internal class BMW : BaseCar, IExtraSpeed
     {
-        public string Model { get; set; }
-        public uint ExtraSpeed { get; set; }
+        public string Model { get; protected set; }
 
-        public BMW(string bodyType, string color, string make, string model, uint extraSpeed)
+        public BMW(string bodyType, string color, string make, string model)
             : base(bodyType, color, make)
         {
             Model = model;
-            ExtraSpeed = extraSpeed;
         }
 
         public override void CarStart()
         {
-            Console.WriteLine($"The engine of the new {Make} {BodyType} started");
+            Console.WriteLine($"The engine of the new {Make} {Model} {BodyType} started\n");
         }
 
-        public void AddExtraSpeed()
+        public void AddExtraSpeed(uint extraSpeed)
         {
-            Console.WriteLine(CurrentSpeed + ExtraSpeed);
+            Console.WriteLine($"Current {Make} speed before calling the method is {CurrentSpeed}");
+
+            CurrentSpeed += extraSpeed;
+
+            Console.WriteLine($"After calling AddExtraSpeed({extraSpeed}) method, current speed is {CurrentSpeed}\n");
+        }
+
+        public override void DecriseSpeed(uint speed)
+        {
+            CurrentSpeed -= speed;
+            base.DecriseSpeed(speed);
         }
     }
 }
